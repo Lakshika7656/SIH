@@ -1,0 +1,994 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* =========================
+   REAL FARM BACKGROUND
+========================= */
+
+/* =================================
+   LIVING FARM BACKGROUND
+================================= */
+
+.farm-scene {
+
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #8fd3a5 0%,
+            #c9e5d1 42%,
+            #8fbd79 68%,
+            #397b32 100%
+        );
+}
+
+
+/* sunlight */
+
+.sun {
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    top: 8%;
+    left: 42%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,245,180,0.8) 0%,
+            rgba(255,230,130,0.35) 35%,
+            transparent 70%
+        );
+
+    animation: sunGlow 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes sunGlow {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0.65;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =================================
+   GRASS FIELD
+================================= */
+
+.grass-field {
+
+    position: absolute;
+
+    left: -5%;
+    bottom: -15px;
+
+    width: 110%;
+    height: 38%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-around;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(20,75,25,0.95),
+            rgba(55,125,43,0.75),
+            transparent
+        );
+}
+
+
+/* individual grass blades */
+
+.grass-field span {
+
+    display: block;
+
+    width: 8px;
+
+    height: 120px;
+
+    background:
+        linear-gradient(
+            to right,
+            #164d1d,
+            #4c9b3c,
+            #1d641f
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    transform-origin: bottom center;
+
+    animation:
+        grassWind
+        var(--speed, 2.5s)
+        ease-in-out
+        infinite
+        alternate;
+
+    animation-delay: var(--delay, 0s);
+
+    opacity: 0.9;
+
+}
+
+
+/* different heights */
+
+.grass-field span:nth-child(1) {
+    height: 90px;
+    --speed: 2.1s;
+}
+
+.grass-field span:nth-child(2) {
+    height: 150px;
+    --speed: 2.8s;
+    --delay: .2s;
+}
+
+.grass-field span:nth-child(3) {
+    height: 110px;
+    --speed: 2.4s;
+    --delay: .4s;
+}
+
+.grass-field span:nth-child(4) {
+    height: 180px;
+    --speed: 3s;
+    --delay: .1s;
+}
+
+.grass-field span:nth-child(5) {
+    height: 130px;
+    --speed: 2.2s;
+    --delay: .5s;
+}
+
+.grass-field span:nth-child(6) {
+    height: 200px;
+    --speed: 3.2s;
+    --delay: .3s;
+}
+
+.grass-field span:nth-child(7) {
+    height: 140px;
+    --speed: 2.6s;
+}
+
+.grass-field span:nth-child(8) {
+    height: 175px;
+    --speed: 2.9s;
+    --delay: .6s;
+}
+
+.grass-field span:nth-child(9) {
+    height: 105px;
+    --speed: 2.3s;
+}
+
+.grass-field span:nth-child(10) {
+    height: 190px;
+    --speed: 3.1s;
+    --delay: .2s;
+}
+
+.grass-field span:nth-child(11) {
+    height: 125px;
+    --speed: 2.5s;
+}
+
+.grass-field span:nth-child(12) {
+    height: 165px;
+    --speed: 2.7s;
+    --delay: .4s;
+}
+
+.grass-field span:nth-child(13) {
+    height: 95px;
+    --speed: 2.2s;
+}
+
+.grass-field span:nth-child(14) {
+    height: 185px;
+    --speed: 3.3s;
+    --delay: .7s;
+}
+
+.grass-field span:nth-child(15) {
+    height: 145px;
+    --speed: 2.6s;
+}
+
+.grass-field span:nth-child(16) {
+    height: 175px;
+    --speed: 2.8s;
+    --delay: .3s;
+}
+
+.grass-field span:nth-child(17) {
+    height: 115px;
+    --speed: 2.4s;
+}
+
+.grass-field span:nth-child(18) {
+    height: 195px;
+    --speed: 3.1s;
+    --delay: .5s;
+}
+
+.grass-field span:nth-child(19) {
+    height: 135px;
+    --speed: 2.5s;
+}
+
+.grass-field span:nth-child(20) {
+    height: 170px;
+    --speed: 2.9s;
+}
+
+
+@keyframes grassWind {
+
+    0% {
+
+        transform:
+            rotate(-7deg)
+            skewX(-3deg);
+
+    }
+
+    25% {
+
+        transform:
+            rotate(2deg)
+            skewX(1deg);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(9deg)
+            skewX(4deg);
+
+    }
+
+    75% {
+
+        transform:
+            rotate(3deg)
+            skewX(2deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(-8deg)
+            skewX(-4deg);
+
+    }
+}
+
+
+/* =================================
+   FLOATING LEAVES
+================================= */
+
+.floating-leaf {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-size: 28px;
+
+    opacity: 0.75;
+
+    pointer-events: none;
+
+    animation:
+        leafMove
+        9s
+        linear
+        infinite;
+}
+
+
+.leaf1 {
+
+    top: 20%;
+    left: 15%;
+
+    animation-delay: 0s;
+}
+
+.leaf2 {
+
+    top: 35%;
+    left: 45%;
+
+    animation-delay: 2s;
+
+    font-size: 20px;
+}
+
+.leaf3 {
+
+    top: 18%;
+    left: 68%;
+
+    animation-delay: 4s;
+
+    font-size: 24px;
+}
+
+.leaf4 {
+
+    top: 45%;
+    left: 80%;
+
+    animation-delay: 6s;
+
+    font-size: 18px;
+}
+
+
+@keyframes leafMove {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 0.8;
+
+    }
+
+    50% {
+
+        transform:
+            translate(90px, 45px)
+            rotate(160deg);
+
+    }
+
+    80% {
+
+        transform:
+            translate(180px, 10px)
+            rotate(300deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate(280px, 70px)
+            rotate(450deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+@keyframes slowZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,55,25,0.48),
+            rgba(7,55,25,0.18),
+            rgba(255,255,255,0.04)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+
+    position: absolute;
+
+    top: 45px;
+    left: 55px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+}
+
+.brand-logo {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+}
+
+.brand h1 {
+
+    font-size: 25px;
+}
+
+.brand p {
+
+    font-size: 11px;
+
+    margin-top: 3px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 48%;
+
+    margin-left: 55px;
+
+    margin-top: 70px;
+
+    color: white;
+
+    max-width: 480px;
+}
+
+.tag {
+
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.14);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.hero-content h2 {
+
+    font-size: 48px;
+
+    line-height: 1.12;
+
+    margin: 20px 0;
+}
+
+.hero-content > p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    max-width: 430px;
+
+    margin-bottom: 30px;
+}
+
+
+/* FEATURES */
+
+.feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 18px 0;
+}
+
+.feature > span {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    color: #2d7b32;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+.feature strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.feature small {
+
+    font-size: 12px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.auth-card {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: 420px;
+
+    margin-left: auto;
+
+    margin-right: 8%;
+
+    padding: 35px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.28);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.card-heading h2 {
+
+    font-size: 30px;
+
+    color: #173b20;
+}
+
+.card-heading p {
+
+    margin-top: 7px;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.auth-card form > label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin: 16px 0 7px;
+
+    color: #333;
+}
+
+
+.auth-card input[type="text"],
+.auth-card input[type="password"] {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid #d9ded9;
+
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.auth-card input:focus {
+
+    border-color: #2f8b35;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(47,139,53,0.1);
+}
+
+
+/* PASSWORD */
+
+.password-box {
+
+    position: relative;
+}
+
+.password-box input {
+
+    padding-right: 45px !important;
+}
+
+.password-box button {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 5px;
+
+    height: 35px;
+
+    width: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* OPTIONS */
+
+.options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 17px 0;
+
+    font-size: 12px;
+}
+
+.remember {
+
+    display: flex;
+
+    gap: 6px;
+
+    align-items: center;
+
+    color: #666;
+}
+
+.remember input {
+
+    accent-color: #2f8b35;
+}
+
+.options a {
+
+    color: #24752b;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* LOGIN */
+
+.main-button {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #157b18,
+            #42a842
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.main-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(21,123,24,0.3);
+}
+
+
+/* DIVIDER */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    background: #ddd;
+
+    flex: 1;
+}
+
+
+/* GOOGLE */
+
+.google-button {
+
+    width: 100%;
+
+    height: 44px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 9px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    color: #444;
+}
+
+.google-button span {
+
+    color: #4285f4;
+
+    margin-right: 8px;
+
+    font-size: 17px;
+}
+
+
+/* BOTTOM */
+
+.bottom-text {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+.bottom-text a {
+
+    color: #24752b;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* SECURITY */
+
+.security {
+
+    position: absolute;
+
+    left: 55px;
+
+    bottom: 25px;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 12px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .auth-page {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 100px 20px 40px;
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        margin: 0 0 30px;
+
+        max-width: 600px;
+    }
+
+    .hero-content h2 {
+
+        font-size: 34px;
+    }
+
+    .auth-card {
+
+        width: 100%;
+
+        max-width: 450px;
+
+        margin: 0;
+    }
+
+    .brand {
+
+        top: 25px;
+
+        left: 25px;
+    }
+
+    .security {
+
+        display: none;
+    }
+}

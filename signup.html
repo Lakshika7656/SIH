@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | AgroAssist</title>
+
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+
+<div class="signup-page">
+
+    <!-- Animated Farm Background -->
+    <div class="farm-background">
+
+        <div class="sun"></div>
+
+        <div class="leaf leaf1">🍃</div>
+        <div class="leaf leaf2">🍃</div>
+        <div class="leaf leaf3">🌿</div>
+
+        <div class="grass">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dark/Green overlay -->
+    <div class="overlay"></div>
+
+
+    <!-- Logo -->
+    <div class="brand">
+
+        <div class="brand-icon">
+            🌱
+        </div>
+
+        <div>
+            <h1>AgroAssist</h1>
+            <p>Smart Agriculture, Better Future</p>
+        </div>
+
+    </div>
+
+
+    <!-- LEFT SIDE -->
+
+    <section class="intro">
+
+        <div class="badge">
+            🌾 &nbsp; FARMER FIRST
+        </div>
+
+        <h2>
+            Grow Smarter.<br>
+            Farm Better. 🌱
+        </h2>
+
+        <p>
+            Join AgroAssist and get smart crop recommendations,
+            soil insights, market intelligence and logistics
+            support in one place.
+        </p>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                🤖
+            </div>
+
+            <div>
+                <h3>AI Crop Advice</h3>
+                <span>Smart recommendations for your crops</span>
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                📈
+            </div>
+
+            <div>
+                <h3>Better Market Decisions</h3>
+                <span>Track prices and market trends</span>
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                🚚
+            </div>
+
+            <div>
+                <h3>Easy Farm-to-Market</h3>
+                <span>Connect with buyers and logistics</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SIGNUP CARD -->
+
+    <section class="signup-card">
+
+        <div class="card-header">
+
+            <div class="mini-icon">
+                🌱
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p>
+                Start your smart farming journey
+            </p>
+
+        </div>
+
+
+        <form id="signupForm">
+
+
+            <!-- Name -->
+
+            <label>Farmer Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <!-- Mobile -->
+
+            <label>Mobile Number</label>
+
+            <input
+                type="tel"
+                id="mobile"
+                placeholder="10-digit mobile number"
+                maxlength="10"
+                required
+            >
+
+
+            <!-- Email -->
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="your@email.com"
+                required
+            >
+
+
+            <!-- State + District -->
+
+            <div class="two-column">
+
+                <div>
+
+                    <label>State</label>
+
+                    <select id="state" required>
+
+                        <option value="">
+                            Select State
+                        </option>
+
+                        <option>Madhya Pradesh</option>
+                        <option>Rajasthan</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Gujarat</option>
+                        <option>Punjab</option>
+                        <option>Haryana</option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>District</label>
+
+                    <input
+                        type="text"
+                        id="district"
+                        placeholder="Your district"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Crop + Farm -->
+
+            <div class="two-column">
+
+                <div>
+
+                    <label>Main Crop</label>
+
+                    <select id="crop" required>
+
+                        <option value="">
+                            Select Crop
+                        </option>
+
+                        <option>Wheat</option>
+                        <option>Rice</option>
+                        <option>Tomato</option>
+                        <option>Potato</option>
+                        <option>Soybean</option>
+                        <option>Cotton</option>
+                        <option>Maize</option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>Farm Size</label>
+
+                    <select id="farmSize" required>
+
+                        <option value="">
+                            Select Size
+                        </option>
+
+                        <option>Less than 1 Acre</option>
+                        <option>1 - 2 Acres</option>
+                        <option>2 - 5 Acres</option>
+                        <option>5 - 10 Acres</option>
+                        <option>More than 10 Acres</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <label>Password</label>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    id="togglePassword">
+                    👁️
+                </button>
+
+            </div>
+
+
+            <!-- Password strength -->
+
+            <div class="strength">
+
+                <span id="strengthBar"></span>
+
+            </div>
+
+            <small id="strengthText">
+                Use at least 8 characters
+            </small>
+
+
+            <!-- Terms -->
+
+            <label class="terms">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                <span>
+                    I agree to the Terms & Privacy Policy
+                </span>
+
+            </label>
+
+
+            <!-- Button -->
+
+            <button
+                type="submit"
+                class="create-button">
+
+                🌱 &nbsp; Create My Account
+
+            </button>
+
+
+        </form>
+
+
+        <!-- Login -->
+
+        <p class="login-link">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+    </section>
+
+
+    <div class="security">
+        🛡️ Your data is secure with us
+    </div>
+
+</div>
+
+
+<script src="js/signup.js"></script>
+
+</body>
+</html>

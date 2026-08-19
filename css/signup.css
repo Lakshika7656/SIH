@@ -1,0 +1,878 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==============================
+   MAIN PAGE
+============================== */
+
+.signup-page {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #75b982;
+}
+
+
+/* ==============================
+   FARM BACKGROUND
+============================== */
+
+.farm-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #91d3a8 0%,
+            #c8e4ca 42%,
+            #8fbd79 68%,
+            #397a32 100%
+        );
+}
+
+
+/* SUN */
+
+.sun {
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    top: 5%;
+
+    left: 48%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,245,180,.9),
+            rgba(255,230,130,.35) 40%,
+            transparent 70%
+        );
+
+    animation: sunlight 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes sunlight {
+
+    from {
+        transform: scale(.9);
+        opacity: .6;
+    }
+
+    to {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+
+/* ==============================
+   GRASS
+============================== */
+
+.grass {
+
+    position: absolute;
+
+    bottom: -10px;
+
+    left: -3%;
+
+    width: 106%;
+
+    height: 34%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-around;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(22,76,27,.95),
+            rgba(56,125,45,.65),
+            transparent
+        );
+}
+
+
+.grass span {
+
+    width: 8px;
+
+    height: 130px;
+
+    border-radius: 100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            to right,
+            #164b1c,
+            #55a845,
+            #1e641f
+        );
+
+    transform-origin: bottom center;
+
+    animation:
+        wind 2.7s ease-in-out infinite alternate;
+
+}
+
+
+/* different grass */
+
+.grass span:nth-child(2n) {
+
+    height: 180px;
+
+    animation-duration: 3.2s;
+
+}
+
+.grass span:nth-child(3n) {
+
+    height: 105px;
+
+    animation-duration: 2.3s;
+
+}
+
+.grass span:nth-child(4n) {
+
+    height: 210px;
+
+    animation-duration: 3.5s;
+
+}
+
+
+@keyframes wind {
+
+    0% {
+
+        transform:
+            rotate(-8deg)
+            skewX(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(8deg)
+            skewX(4deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(-5deg)
+            skewX(-2deg);
+
+    }
+
+}
+
+
+/* ==============================
+   FLOATING LEAVES
+============================== */
+
+.leaf {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-size: 28px;
+
+    opacity: .7;
+
+    animation:
+        floatingLeaf 9s linear infinite;
+}
+
+
+.leaf1 {
+
+    left: 18%;
+
+    top: 25%;
+
+}
+
+
+.leaf2 {
+
+    left: 50%;
+
+    top: 18%;
+
+    animation-delay: 3s;
+
+}
+
+
+.leaf3 {
+
+    left: 75%;
+
+    top: 35%;
+
+    animation-delay: 5s;
+
+}
+
+
+@keyframes floatingLeaf {
+
+    0% {
+
+        transform:
+            translate(0,0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: .75;
+
+    }
+
+    50% {
+
+        transform:
+            translate(100px,60px)
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate(250px,30px)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ==============================
+   OVERLAY
+============================== */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10,65,30,.65),
+            rgba(10,65,30,.28),
+            rgba(255,255,255,.08)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==============================
+   BRAND
+============================== */
+
+.brand {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 40px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: white;
+}
+
+
+.brand-icon {
+
+    width: 56px;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 16px;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+}
+
+
+.brand h1 {
+
+    font-size: 27px;
+
+    margin-bottom: 4px;
+}
+
+
+.brand p {
+
+    font-size: 12px;
+
+    opacity: .85;
+}
+
+
+/* ==============================
+   LEFT INTRO
+============================== */
+
+.intro {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 52%;
+
+    margin-left: 40px;
+
+    color: white;
+
+    padding-top: 45px;
+
+    max-width: 600px;
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 12px;
+
+    letter-spacing: .8px;
+}
+
+
+.intro h2 {
+
+    font-size: 52px;
+
+    line-height: 1.08;
+
+    margin: 20px 0;
+}
+
+
+.intro > p {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    max-width: 520px;
+
+    margin-bottom: 28px;
+}
+
+
+/* BENEFITS */
+
+.benefit {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 16px 0;
+}
+
+
+.benefit-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+
+.benefit h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.benefit span {
+
+    font-size: 12px;
+
+    opacity: .8;
+}
+
+
+/* ==============================
+   SIGNUP CARD
+============================== */
+
+.signup-card {
+
+    position: relative;
+
+    z-index: 6;
+
+    width: 450px;
+
+    margin-left: auto;
+
+    margin-right: 6%;
+
+    padding: 30px 34px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.28);
+
+    backdrop-filter: blur(12px);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+
+/* CARD HEADER */
+
+.card-header {
+
+    margin-bottom: 18px;
+}
+
+
+.mini-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eaf7e9;
+
+    margin-bottom: 10px;
+}
+
+
+.card-header h2 {
+
+    color: #173b20;
+
+    font-size: 27px;
+}
+
+
+.card-header p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   FORM
+============================== */
+
+.signup-card label {
+
+    display: block;
+
+    color: #333;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin: 12px 0 6px;
+}
+
+
+.signup-card input,
+.signup-card select {
+
+    width: 100%;
+
+    height: 40px;
+
+    border: 1px solid #d7ded7;
+
+    border-radius: 8px;
+
+    padding: 0 11px;
+
+    background: white;
+
+    outline: none;
+
+    font-size: 12px;
+
+    color: #333;
+}
+
+
+.signup-card input:focus,
+.signup-card select:focus {
+
+    border-color: #2d8b32;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(45,139,50,.1);
+}
+
+
+/* TWO COLUMNS */
+
+.two-column {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* PASSWORD */
+
+.password-box {
+
+    position: relative;
+}
+
+
+.password-box input {
+
+    padding-right: 45px;
+}
+
+
+.password-box button {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 3px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* STRENGTH */
+
+.strength {
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #e5e5e5;
+
+    border-radius: 5px;
+
+    margin-top: 7px;
+
+    overflow: hidden;
+}
+
+
+#strengthBar {
+
+    display: block;
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #38a33d;
+
+    transition: .3s;
+}
+
+
+#strengthText {
+
+    color: #888;
+
+    font-size: 10px;
+}
+
+
+/* TERMS */
+
+.terms {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: normal !important;
+
+    margin: 15px 0 !important;
+}
+
+
+.terms input {
+
+    width: 15px !important;
+
+    height: 15px !important;
+
+    accent-color: #24832a;
+}
+
+
+/* BUTTON */
+
+.create-button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #157d1b,
+            #43aa43
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.create-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(25,120,30,.3);
+}
+
+
+/* LOGIN */
+
+.login-link {
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 17px;
+}
+
+
+.login-link a {
+
+    color: #218027;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* SECURITY */
+
+.security {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 40px;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 900px) {
+
+    .signup-page {
+
+        flex-direction: column;
+
+        padding: 110px 20px 40px;
+    }
+
+    .brand {
+
+        top: 20px;
+
+        left: 20px;
+    }
+
+    .intro {
+
+        width: 100%;
+
+        margin: 0 0 25px;
+
+        padding: 0;
+
+        max-width: 600px;
+    }
+
+    .intro h2 {
+
+        font-size: 35px;
+    }
+
+    .signup-card {
+
+        width: 100%;
+
+        max-width: 450px;
+
+        margin: 0;
+
+        max-height: none;
+    }
+
+    .security {
+
+        display: none;
+    }
+}
