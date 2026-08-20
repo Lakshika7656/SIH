@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crop AI - AgroAssist</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="app crop-ai-page">
+
+        <!-- Header -->
+        <header class="page-header">
+            <a href="../index.html" class="back-btn">←</a>
+
+            <h1>Crop Health Check</h1>
+        </header>
+
+
+        <!-- Description -->
+        <p class="page-description">
+            Upload a photo of your crop to check its health.
+        </p>
+
+
+        <!-- Upload Box -->
+        <section class="upload-box">
+
+            <div class="upload-icon">
+                📷
+            </div>
+
+            <h2>Upload Crop Photo</h2>
+
+            <p>
+                Take a photo or choose one from your gallery.
+            </p>
+
+            <label for="cropImage" class="upload-btn">
+                Upload from Gallery
+            </label>
+
+            <input
+                type="file"
+                id="cropImage"
+                accept="image/*"
+                hidden
+            >
+
+        </section>
+
+
+        <!-- Image Preview -->
+        <section class="preview-section" id="previewSection">
+
+            <h2>Image Preview</h2>
+
+            <img
+                id="cropPreview"
+                class="crop-preview"
+                alt="Crop Preview"
+            >
+
+        </section>
+
+
+        <!-- Analyze Button -->
+        <button
+            class="analyze-btn"
+            id="analyzeBtn"
+            type="button"
+        >
+            Analyze Crop
+        </button>
+
+
+        <!-- Result -->
+        <section class="result-card" id="resultCard">
+
+            <h2>🤖 Crop Health Result</h2>
+
+            <div class="result-item">
+                <span>Disease</span>
+                <strong>Leaf Spot</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Confidence</span>
+                <strong>92%</strong>
+            </div>
+
+            <div class="advisory">
+                <h3>💡 Advisory</h3>
+
+                <p>
+                    Monitor the affected crop and follow
+                    appropriate crop-care guidance.
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+
+</body>
+</html>

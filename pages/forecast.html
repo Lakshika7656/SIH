@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Price Forecast - AgroAssist</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="page-header">
+            <a href="../index.html" class="back-btn">←</a>
+            <h1>Price Forecast</h1>
+        </header>
+
+        <p class="page-description">
+            View expected crop prices and plan when to sell.
+        </p>
+
+
+        <!-- Crop Selection -->
+        <section class="forecast-select">
+
+            <label for="cropSelect">Select Crop</label>
+
+            <select id="cropSelect">
+                <option>Tomato</option>
+                <option>Potato</option>
+                <option>Onion</option>
+                <option>Wheat</option>
+            </select>
+
+        </section>
+
+
+        <!-- Current Price -->
+        <section class="forecast-card">
+
+            <p>Current Price</p>
+
+            <h2>₹40 / kg</h2>
+
+            <span class="price-up">
+                ↑ Expected to increase
+            </span>
+
+        </section>
+
+
+        <!-- Forecast -->
+        <section class="forecast-card">
+
+            <h2>📊 7-Day Forecast</h2>
+
+            <div class="forecast-chart">
+
+                <div class="chart-bar">
+                    <span>₹40</span>
+                    <div style="height: 55%;"></div>
+                    <small>Today</small>
+                </div>
+
+                <div class="chart-bar">
+                    <span>₹42</span>
+                    <div style="height: 65%;"></div>
+                    <small>Day 2</small>
+                </div>
+
+                <div class="chart-bar">
+                    <span>₹43</span>
+                    <div style="height: 72%;"></div>
+                    <small>Day 3</small>
+                </div>
+
+                <div class="chart-bar">
+                    <span>₹45</span>
+                    <div style="height: 82%;"></div>
+                    <small>Day 4</small>
+                </div>
+
+                <div class="chart-bar">
+                    <span>₹46</span>
+                    <div style="height: 90%;"></div>
+                    <small>Day 5</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recommendation -->
+        <section class="forecast-recommendation">
+
+            <h2>💡 Recommendation</h2>
+
+            <p>
+                Prices are expected to increase. Consider monitoring
+                the market before selling your crop.
+            </p>
+
+        </section>
+
+
+        <!-- Back -->
+        <a href="../index.html" class="primary-link">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
